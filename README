@@ -1,3 +1,5 @@
+Note the license. Use at your own risk!
+
 Quick setup:
 1. Download thcrap_steam.py and put it somewhere like ~/scripts/ or ~/
 2. Put this line in the custom launch options for the game:
@@ -9,8 +11,8 @@ you want
 thcrap -> path to thcrap (default = ~/thcrap)
 patch -> the patch to use (default = en.js)
 log -> logfile (default = ~/thcrap_steam.log)
-4. You're done! The sc
-Let me know if you have any questions (I admit that was rather brief)...
+4. You're done! When you click 'play', the game should now launch the game with thcrap, with your desired patch configuration.
+Let me know if you have any questions through issues, Discord (Kein#7703) or whatever.
 
 Explanation:
 
