@@ -1,0 +1,40 @@
+Quick setup:
+1. Download thcrap_steam.py and put it somewhere like ~/scripts/ or ~/
+2. Put this line in the custom launch options for the game:
+/usr/bin/python3 <SCRIPT> "%command%"
+Where <SCRIPT> is the path to thcrap_steam.py
+3. Download thcrap_steam.ini.def and move it to ~/.config
+also rename it to thcrap_steam.ini and make sure that the variables are what
+you want
+thcrap -> path to thcrap (default = ~/thcrap)
+patch -> the patch to use (default = en.js)
+log -> logfile (default = ~/thcrap_steam.log)
+4. You're done! The sc
+Let me know if you have any questions (I admit that was rather brief)...
+
+Explanation:
+
+Script for executing a touhou game on Linux with thcrap that was installed through steam.
+....That was a mouthful.
+Through extensive tinkering with the custom launch options, I discovered a few things.
+One of which was that I have no idea how precisely they are evaluating the commands.
+One particularly annoying thing is that it apparently prohibited text substitution or something.
+Or something, I'm not terribly sure...
+I tried to find a one liner, but that didn't happen.
+But what I did find out is that it allowed you to invoke another process and delegate to that.
+So, say, call python and modify the command that steam would execute.
+
+The command that steam uses to invoke a touhou game (and I assume it's the same for other games) is something like:
+
+'$HOME/.steam/debian-installation/steamapps/common/$STEAMRUNTIME_v2-entry-point --verb=waitforexitandrun -- '$HOME/.steam/<...>/steamapps/common/Proton $PROTONVERSION'/proton waitforexitandrun  '$HOME/.steam/<...>/steamapps/common/thXX/thXX.exe'
+
+(Note that the $'d variables, with the exception of perhaps $HOME, don't actually exist)
+
+This is the actual command that steam runs to start up the game.
+So, with that, you can swap out the game executable with thcrap - and Steam isn't the wiser!
+
+The code is terrible, but you should look there for more information (it's only like 60 loc)
+
+
+
+

@@ -1,0 +1,5 @@
+[script]
+thcrap=~/thcrap/
+patch=en.js
+log=~/thcrap_steam.log
+
